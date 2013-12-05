@@ -1,0 +1,7 @@
+@import "neat/neat-helpers";
+
+// Neat grid settings
+$grid-columns: 5;
+$gutter: 0px;
+
+$mobile: new-breakpoint(max-width 1024px 1);
