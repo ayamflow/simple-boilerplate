@@ -3,6 +3,15 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
+                    style: 'compressed',
+                    loadPath: 'sass'
+                },
+                files: {
+                    'css/styles.css' : 'sass/styles.scss'
+                }
+            },
+            dev: {
+                options: {
                     style: 'expanded',
                     loadPath: 'sass'
                 },
@@ -32,5 +41,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask('default', ['sass', 'watch']);
+    grunt.registerTask('default', ['sass:dev', 'watch']);
+    grunt.registerTask('build', ['sass:dist']);
 };
